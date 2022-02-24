@@ -1,24 +1,5 @@
-# api-demo
+# NASA Astronomy Picture of the Day
+## A search engine built with Vue3
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+This is a simple app that queries the NASA Astronomy Picture of the Day API. You can query a specific date,
+or return a random set of 6 images. An individual result can also be clicked for an expanded view. Styling was done using TailwindCSS.
