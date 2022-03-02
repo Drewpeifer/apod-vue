@@ -71,6 +71,7 @@ export default {
 						service_version: "v1",
 						title: "Sorry, no picture for that date :(",
 						url: "/einstein.jpeg",
+						hdurl: "/einstein.jpeg",
 						copyright: "None"
 					}
 				}

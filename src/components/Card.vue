@@ -3,7 +3,7 @@
 		class="flex flex-col m-5 p-5 justify-start text-center text-2x text-200 bg-white shadow-2xl border border-gray-900 rounded-md w-max-fit"
 		:to="{name: 'Expanded', params: {
 			title: post.title,
-			date: post.date,
+			date: niceDate(post.date),
 			copyright: post.copyright,
 			hdurl: post.hdurl,
 			explanation: post.explanation
