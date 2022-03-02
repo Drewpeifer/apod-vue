@@ -5,13 +5,21 @@
 			title: post.title,
 			date: niceDate(post.date),
 			copyright: post.copyright,
+			url: post.url,
 			hdurl: post.hdurl,
-			explanation: post.explanation
+			explanation: post.explanation,
+			media_type: post.media_type
 		}}">
 		<div>
 			<h1>{{post.title}}</h1>
 			<p class="text-xs mb-2">{{ niceDate(post.date) }}</p>
-			<img class="mx-auto max-w-xl" :src="post.url" />
+			<iframe v-if="post.media_type == 'video'"
+					class="mx-auto"
+					:src="post.url"
+					width="320"
+					height="240"
+					webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			<img v-else class="mx-auto max-w-xl" :src="post.url" />
 			<p v-if="post.copyright" class="text-xs">Copyright: {{post.copyright}}</p>
 			<p v-else class="text-xs">Copyright: NASA</p>
 			<p class="text-xs max-w-xl mx-auto my-2 text-justify">{{post.explanation}}</p>

@@ -6,8 +6,13 @@
 	<div class="flex grow mt-5 flex-row justify-center mx-auto ">
 		<button @click="randomSearch" class="bg-green-900 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full w-min whitespace-nowrap">Surprise me!</button>
 	</div>
-	<div class="px-5 grow flex flex-wrap justify-center flex-row">
-		<Card v-for="post in posts" :post="post" :key="post.date" />
+	<div class="flex flex-row flex-wrap justify-center">
+		<div class="px-5 grow flex flex-wrap justify-start flex-col w-1/2">
+			<Card v-for="post in posts1" :post="post" :key="post.date" class="inline-flex" />
+		</div>
+		<div class="px-5 grow flex flex-wrap justify-start flex-col w-max-1/2">
+			<Card v-for="post in posts2" :post="post" :key="post.date" class="inline-flex" />
+		</div>
 	</div>
 	<div class="footer self-end text-center pt-5 text-white text-xs">
 		<p>Powered by 
@@ -27,7 +32,8 @@ export default {
 	},
 	setup() {
 		const state = reactive({
-			posts: [],
+			posts1: [],
+			posts2: [],
 			searchDate: "",
 			refreshDate: computed(() => refreshDate())
 		});
@@ -76,7 +82,8 @@ export default {
 					}
 				}
 				console.log(data);
-				state.posts = [data];
+				state.posts1 = [data];
+				state.posts2 = [];
 				console.dir(state);
 			})
 		}
@@ -86,8 +93,10 @@ export default {
 			fetch("https://api.nasa.gov/planetary/apod?api_key=up0wVqmYq3dlP8SAGdRVWljjiELKm44P38DRGuNC&count=6")
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data);
-				state.posts = data;
+				console.log('multi');
+				console.dir(data);
+				state.posts1 = data.slice(0, Math.ceil(data.length / 2));
+				state.posts2 = data.slice(-Math.ceil(data.length / 2));
 				console.dir(state);
 			})
 		}
