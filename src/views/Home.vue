@@ -8,10 +8,10 @@
 	</div>
 	<div class="flex flex-row flex-wrap justify-center">
 		<div class="px-5 grow flex flex-wrap justify-start flex-col w-1/2">
-			<Card v-for="post in posts1" :post="post" :key="post.date" class="inline-flex" />
+			<Card v-for="post in posts1" :post="post" :key="post.date"/>
 		</div>
 		<div class="px-5 grow flex flex-wrap justify-start flex-col w-max-1/2">
-			<Card v-for="post in posts2" :post="post" :key="post.date" class="inline-flex" />
+			<Card v-for="post in posts2" :post="post" :key="post.date"/>
 		</div>
 	</div>
 	<div class="footer self-end text-center pt-5 text-white text-xs">
