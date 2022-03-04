@@ -7,10 +7,10 @@
 		<button @click="randomSearch" class="bg-green-900 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full w-min whitespace-nowrap">Surprise me!</button>
 	</div>
 	<div class="flex flex-row flex-wrap justify-center">
-		<div class="px-5 grow flex flex-wrap justify-start flex-col w-1/2">
+		<div class="px-5 grow flex flex-wrap justify-start flex-col md:w-1/2">
 			<Card v-for="post in posts1" :post="post" :key="post.date"/>
 		</div>
-		<div class="px-5 grow flex flex-wrap justify-start flex-col w-max-1/2">
+		<div class="px-5 grow flex flex-wrap justify-start flex-col md:w-max-1/2">
 			<Card v-for="post in posts2" :post="post" :key="post.date"/>
 		</div>
 	</div>

@@ -19,7 +19,7 @@
 					width="320"
 					height="240"
 					webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-			<img v-else class="mx-auto max-w-xl" :src="post.url" />
+			<img v-else class="w-60 md:w-auto mx-auto max-w-xl" :src="post.url" />
 			<p v-if="post.copyright" class="text-xs">Copyright: {{post.copyright}}</p>
 			<p v-else class="text-xs">Copyright: NASA</p>
 			<p class="text-xs max-w-xl mx-auto my-2 text-justify">{{post.explanation}}</p>
