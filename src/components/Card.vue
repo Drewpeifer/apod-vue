@@ -14,7 +14,7 @@
 			<h1>{{post.title}}</h1>
 			<p class="text-xs mb-2">{{ niceDate(post.date) }}</p>
 			<iframe v-if="post.media_type == 'video'"
-					class="mx-auto"
+					class="w-60 md:w-auto mx-auto max-w-xl"
 					:src="post.url"
 					width="320"
 					height="240"
